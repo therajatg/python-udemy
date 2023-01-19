@@ -21,8 +21,14 @@
 # arrayCheck([1, 1, 2, 1, 2, 3]) → True
 
 def arrayCheck(nums):
-  
-    # CODE GOES HERE
+  # CODE GOES HERE
+  for index in range(len(nums)):
+    if nums[index] == 1:
+      if nums[index+1]==2 and nums[index+2]==3:
+        return True
+  return False
+
+print(arrayCheck([1, 1, 2, 3, 1]))
 
 
 #####################
@@ -40,6 +46,7 @@ def arrayCheck(nums):
 
 def stringBits(str):
   # CODE GOES HERE
+  print(str[::2])
 
 
 #####################
@@ -61,6 +68,15 @@ def stringBits(str):
 
 def end_other(a, b):
   # CODE GOES HERE
+  a_len = len(a)
+  b_len = len(b)
+  if(a_len > b_len):
+    a[a_len-b_len:].lower() == b.lower()
+    return True
+  elif(b_len>a_len):
+    b[b_len-a_len:].lower() == a.lower()
+    return True
+  return False
 
 #####################
 ## -- PROBLEM 4 -- ##
@@ -75,6 +91,10 @@ def end_other(a, b):
 
 def doubleChar(str):
   # CODE GOES HERE
+  newstr = ""
+  for word in str:
+    newstr = newstr + word + word
+  print(newstr)
 
 
 #####################
@@ -100,6 +120,7 @@ def doubleChar(str):
 
 def no_teen_sum(a, b, c):
   # CODE GOES HERE
+
 def fix_teen(n):
   # CODE GOES HERE
 
@@ -115,5 +136,5 @@ def fix_teen(n):
 # count_evens([2, 2, 0]) → 3
 # count_evens([1, 3, 5]) → 0
 
-def count_evens(nums):
-  # CODE GOES HERE
+# def count_evens(nums):
+#   filter(lambda num: num%2==0, nums)
